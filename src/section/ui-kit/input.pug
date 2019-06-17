@@ -1,0 +1,20 @@
+//- ====================
+//- инпут
+//- ====================
+
+mixin input(id, type, placeholder, name, value)
+    +b('label').input(class!=attributes.class)
+        +e('input').input-field&attributes( attributes )(id=id, type=type, placeholder=placeholder, name=name, value=value )
+        block
+
+mixin input_label(id, type, placeholder, name, value, label)
+    +b('label').input(class!=attributes.class)
+        +e('span').label #{label}
+        +e('input').input-field&attributes( attributes )(id=id, type=type, placeholder=placeholder, name=name, value=value )
+        block
+
+mixin input_label--select(id, type, placeholder, name, value, label)
+    +b('label').input(class!=attributes.class)
+        +e('span').label #{label}
+        +e('select').input-field&attributes( attributes )(id=id, placeholder=placeholder, name=name, value=value )
+            block

@@ -1,0 +1,80 @@
+/*  desktop first */
+.radio {
+    position: relative;
+    display: block;
+    line-height: 0px;
+    margin-bottom: 7px;
+    min-height: 16px;
+
+    &__input {
+        // display: none;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        height: 0px;
+        width: 0px;
+        z-index: 0;
+        opacity: 0;
+    }
+
+    &__label {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+        width: auto;
+
+        // Большой кружок
+        &:before {
+            content: '';
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid @form-border;
+            background-color: @radio-back;
+            border-radius: 50%;
+            transition-property: border-color, background-color;
+            transition-duration: @fast-animation;
+            vertical-align: middle;
+            position: absolute;
+            left: 0px;
+            top: 4px;
+            z-index: 1;
+        }
+
+        // маленький кружочек
+        &:after {
+            content: '';
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background-color: transparent;
+            position: absolute;
+            transition-property: background-color;
+            transition-duration: @fast-animation;
+            border-radius: 50%;
+            top: 9px;
+            left: 5px;
+            z-index: 1;
+        }
+    }
+
+    &__input:checked + &__label {
+        // Большой кружок
+        &:before {
+            // border-color: #000;
+        }
+        &:after {
+            background-color: @cl-green;
+        }
+    }
+
+    &__text-label {
+        .roboto-300();
+        font-size: 16px;
+        line-height: 1.7;
+        color: #000;
+        vertical-align: middle;
+        padding-left: 28px;
+        display: inline-block;
+    }
+}

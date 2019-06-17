@@ -1,0 +1,88 @@
+/*  desktop first */
+
+.input {
+    width: auto;
+    display: inline-flex;
+    font-size: 1rem;
+
+    &--vert {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    &--full-width {
+        width: 100%;
+
+        .input__input-field {
+            width: 100%;
+            max-width: none;
+        }
+    }
+
+    &.error & {
+        &__input-field {
+            border: 1px solid @errorColor;
+        }
+    }
+
+    // &.ok {
+    // }
+
+    &__label {
+        flex: 0 1 auto;
+        margin-right: 6px;
+        margin-left: 2px;
+    }
+
+    &__input-field {
+        display: inline-block;
+        height: 38px;
+        min-width: 220px;
+        width: auto;
+        padding: 6px;
+        background-color: @form-back;
+        border: 1px solid @cl-border;
+        border-radius: 4px;
+        font-size: 16px;
+        line-height: 1.2;
+        transition: border .3s;
+
+        &:focus {
+            // border: 1px solid @cl-4l-background-point-menu;
+            // border-color: orange;
+        }
+
+        &[disabled] {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        &[placeholder]{
+            text-overflow: ellipsis;
+        }
+    }
+
+    &__search-button {
+        position: absolute;
+        bottom: 5px;
+        right: 0;
+        top: 2px;
+        border: none;
+        padding: 2px 5px 5px;
+        font-size: 11px;
+        width: 24px;
+        background-color: transparent;
+        transition: color @fast-animation;
+
+        .no-touchevents &:hover,
+        .touchevents &:active {
+            color: @cl-theme-link-hover;
+        }
+    }
+
+    &__status-msg {
+        margin: 4px 0 0 0;
+        font-size: 13px;
+        color: @errorColor;
+        max-width: 300px;
+    }
+}

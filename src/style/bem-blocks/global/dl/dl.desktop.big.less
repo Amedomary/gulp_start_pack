@@ -1,0 +1,54 @@
+/*  desktop first */
+
+.dl {
+    margin: 0;
+    font-size: 17px;
+    width: max-content;
+
+    &__row,
+    tr {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        line-height: 32px;
+        padding: 0 8px;
+
+        &:nth-child(even) {
+            background: #fafbf6;
+        }
+    }
+
+    tr {
+        display: table-row;
+    }
+
+    &__dt,
+    th {
+        font-size: 16px;
+        display: inline-block;
+        width: 180px;
+        margin-right: 24px;
+        font-style: italic;
+        font-weight: normal;
+        border: none;
+    }
+    th {
+        display: table-cell;
+    }
+
+    &__dd,
+    td {
+        display: inline-block;
+        width: auto;
+        min-width: 180px;
+        margin: 0;
+        .roboto-700();
+        padding-right: 32px;
+        border: none;
+    }
+
+    td {
+        display: table-cell;
+    }
+
+}

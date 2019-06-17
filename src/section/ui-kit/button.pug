@@ -1,0 +1,15 @@
+//- ====================
+//- Блочная ссылка (Кнопка)
+//- ====================
+
+//- if <a>       "link": false
+//- if <button>  "link": true
+
+mixin button(content,  link)
+    if link == false
+        +b('a').button( href="javascript:void(0);" title=`${content}` )&attributes( attributes ) #{content}
+            block
+
+    else
+        +b('button').button&attributes( attributes ) #{content}
+            block

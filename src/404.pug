@@ -1,0 +1,20 @@
+//- ====================
+//- 404 страница.
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = '404'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'Page not found';
+
+//- Выводим content
+block content
+    include section/ui-kit/title.pug
+    +title('h1', '404').--block.--center
+    +title('h1', 'Oops! Page not found').--block.--center
+    +title('h1', ':(').--block.--center

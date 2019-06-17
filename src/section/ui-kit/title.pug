@@ -1,0 +1,7 @@
+//- ====================
+//- заголовок
+//- ====================
+
+mixin title(type, title)
+    +b(type).title(class!=attributes.class) #{title}
+        block

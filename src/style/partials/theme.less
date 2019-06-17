@@ -1,0 +1,230 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    outline-color: rgba(6, 197, 188, .7);
+}
+
+html,
+body {
+    height: 100%;
+    background-color: @background;
+}
+
+html {
+    font-size: 14px;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: @font-base;
+    line-height: 21px;
+    vertical-align: top;
+    color: @cl-theme-global;
+
+    -webkit-text-size-adjust: 100%;
+}
+
+// global
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    // outline: none;
+    transition: color @fast-animation;
+    text-decoration: none;
+    color: @cl-theme-link;
+
+    .no-touchevents &:hover,
+    .touchevents &:active {
+        color: @cl-theme-link-hover;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0px;
+    margin-bottom: .8em;
+    font-weight: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: @cl-theme-global;
+    .roboto-500();
+}
+
+hr {
+    position: relative;
+    display: block;
+    height: 1px;
+    margin: 16px 0;
+    font-size: 0;
+    line-height: 0;
+    border: none;
+    border-bottom: 1px solid @cl-border;
+    background: none;
+}
+
+ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+ul li {
+    margin-bottom: 0px;
+    list-style: none;
+}
+
+ol {
+    margin-bottom: 0px;
+}
+
+.table {
+    margin: 0;
+    border: 1px solid @cl-border;
+}
+th,
+td {
+    padding: 1px;
+    text-align: left;
+    border: 1px solid @cl-border;
+    background: none;
+}
+
+q,
+blockquote {
+    margin: 0px auto;
+    padding: 0;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    text-transform: uppercase;
+    border: none;
+}
+
+fieldset {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+// clear
+.clearfix {
+    position: relative;
+    zoom: 1;
+}
+
+.clear {
+    clear: both;
+    overflow: hidden;
+    height: 1px;
+    margin-top: -1px;
+    line-height: 1px;
+}
+
+
+// form
+form {
+    position: relative;
+    display: block;
+    clear: both;
+    zoom: 1;
+}
+
+label,
+.label {
+    position: relative;
+    display: block;
+    clear: both;
+    zoom: 1;
+    width: 100%;
+    margin: 0;
+    font-weight: normal; //Сброс значения bold, идущего из битрикса
+}
+
+input,
+textarea,
+select {
+    position: relative;
+    display: block;
+    zoom: 1;
+    width: 100%;
+    font-family: @font-base;
+    color: @cl-theme-global;
+    border: 1px solid @cl-border;
+    background: #ffffff;
+    box-shadow: none;
+}
+
+input[type='file'] {
+    position: relative;
+    display: block;
+    margin: 0;
+}
+
+textarea {
+    height: auto;
+    resize: vertical;
+}
+
+select {
+    padding: 0;
+}
+
+.pre {
+    margin: 0;
+    padding: 10px 8px;
+    font-size: 16px;
+    border-radius: 4px;
+    background: #ffffff;
+
+    &--wrap {
+        white-space: pre-line;
+    }
+}
+
+del {
+    color: @errorColor;
+}
+
+ins {
+    color: @okColor;
+}
+
+
+// global class, use with important
+.center-text {
+    text-align: center !important;
+}
+
+.right-text {
+    text-align: right !important;
+}
+
+// placeholder
+.placeholder() {
+    text-overflow: ellipsis;
+    opacity: 1;
+    color: @cl-gray-dark;
+
+    .roboto-300();
+}
+
+::-webkit-input-placeholder {
+    .placeholder();
+}
+:-moz-placeholder {
+    .placeholder();
+}
+::-moz-placeholder {
+    .placeholder();
+}
+:-ms-input-placeholder {
+    .placeholder();
+}

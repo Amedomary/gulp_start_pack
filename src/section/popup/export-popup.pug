@@ -1,0 +1,23 @@
+//- ====================
+
+mixin export-popup()
+    include ../ui-kit/popup.pug
+    include ../ui-kit/title.pug
+    include ../ui-kit/button.pug
+
+    +b('aside').export-popup
+        //- Крестик
+        +popup_close()
+
+        form
+            +title('h4', 'Export').--block.--center
+
+            .filter-bar__row
+                +title('h5', 'MT engine:').--block.--filter
+                +input_label--select('', 'text', '', '', '', '').--vert
+                    option(value="1") 1. English → Chinese
+                    option(value="2") 2. Chinese → English
+
+            div
+                +button('Export', true).--main-color.--s30
+                +button('Cancel', true).--main-color.--s30.js-close-popup

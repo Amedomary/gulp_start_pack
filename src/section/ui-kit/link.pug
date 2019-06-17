@@ -1,0 +1,19 @@
+//- ====================
+//- Строчная ссылка (in text)
+//- ====================
+
+//- if <a>        link = true
+//- if <button>   link = false
+
+mixin link(content, link)
+    if link == true
+        +b('a').link( href="javascript:void(0);" title=`${content}` )&attributes( attributes ) #{content}
+            block
+
+    else
+        +b('button').link&attributes( attributes ) #{content}
+            block
+
+mixin link--type(type)
+    +b(type).link&attributes( attributes )
+        block

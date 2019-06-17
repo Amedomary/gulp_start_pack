@@ -1,0 +1,96 @@
+/*  desktop first */
+.checkbox {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: 0;
+    left: 0;
+    font-size: 14px;
+    line-height: 1.43;
+    margin-right: 12px;
+    width: auto;
+
+    &__name,
+    &__input {
+        display: inline-block;
+        width: auto;
+    }
+
+    &__input {
+        width: 0;
+        height: 0;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+    }
+
+    &__name {
+        position: relative;
+        display: block;
+        cursor: pointer;
+        padding-left: 30px;
+        font-size: 16px;
+        line-height: 28px;
+        height: 30px;
+
+        &:before {
+            content: "";
+            position: absolute;
+            display: inline-block;
+            top: 0;
+            left: 0;
+            width: 28px;
+            height: 28px;
+            border-radius: 4px;
+            background-color: #fff;
+            border: 1px solid @cl-border;
+            transition-duration: @fast-animation;
+        }
+
+        &:after {
+            content: "";
+            background-color: transparent;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            left: 7px;
+            top: 7px;
+            opacity: 0;
+            transition-property: opacity;
+            transition-duration: @fast-animation;
+            display: block;
+            width: 15px;
+            height: 9px;
+            border-bottom: solid 2px @check-mark;
+            border-left: solid 2px @check-mark;
+            transform: rotate(-45deg);
+        }
+
+        &:hover {
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    &__input[type=checkbox]:checked~&__name {
+
+        &:after {
+            opacity: 1;
+        }
+
+        &:before {
+            background-color: @cl-main;
+            border-color: @cl-main;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        vertical-align: middle;
+        letter-spacing: 0;
+        font-size: 14px;
+        line-height: 1.43;
+        padding-left: 7px;
+    }
+}

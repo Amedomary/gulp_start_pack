@@ -1,0 +1,108 @@
+//- ====================
+//- Project: Gui
+//- 00-00-2017:
+//- --------------------
+//- Gui
+//- ====================
+
+//- Используем стандартный шаблон Project
+extends ./template/base_layout
+
+block variables
+    - var file_name = 'gui'
+
+//- Модифицируем head
+block head
+    - var pageTitle = 'gui';
+
+include section/ui-kit/popup.pug
+include section/ui-kit/link.pug
+include section/ui-kit/button.pug
+include section/ui-kit/text-block.pug
+include section/ui-kit/icon.pug
+include section/ui-kit/input.pug
+include section/ui-kit/breadcrumbs.pug
+include section/ui-kit/checkbox.pug
+include section/ui-kit/radio.pug
+include section/ui-kit/hr.pug
+include section/ui-kit/title.pug
+
+//- Выводим попапы
+block popup
+    //- ПопАпчики
+    +popup()(data-popup='test')
+        div(style='background-color: white; height: 999px; width: 400px;') Тестовый текст
+            br
+            a.link.js-close-popup( href='#', style='font-size: 25px;' ) Закрыть ПопАп
+
+    +popup()(data-popup='test2')
+        div(style='background-color: white; height: 229px; width: 150px;') Тестовый текст 2
+            br
+            a.link.js-close-popup( href='#', style='font-size: 25px;' ) Закрыть ПопАп
+
+//- Выводим content
+block content
+    .container
+        h1 Gui - заголовок 1
+        h2 Заголовок 2
+        h3 Заголовок 3
+        h4 Заголовок 4
+        h5 Заголовок 5
+        h6 Заголовок 6
+
+        +hr()
+
+        +title('h1').title.--block Gui - заголовок 1
+        +title('h2').title.--block Заголовок 2
+        +title('h3').title.--block Заголовок 3
+        +title('h4').title.--block Заголовок 4
+        +title('h5').title.--block Заголовок 5
+        +title('h6').title.--block Заголовок 6
+        +title('h6').title.--block.-h7 Заголовок 7
+
+        +hr()
+
+        +text-block()
+            p
+                a.link.js-open-popup( href='#', data-popup='test' ) Открыть попАп - 1
+            p
+                a.link.js-open-popup( href='#', data-popup='test2' ) Открыть попАп - 2
+
+        +hr()
+        //- Текстовые ссылки
+        +link('text', true).--test(data-url="atribute")
+        +link('text',  false).js-class.-active(data-popup="open-test")
+
+        +hr()
+        //- Кнопки похожие на кнопки
+        // +button('text', true).--test(data-url="atribute")
+        // +button('text', false).js-class.-active(data-popup="open-test")
+
+        +button('Test btn 1', true)
+        +button('Test btn 2', false).--block
+        +button('Test btn 3', true).--block.-disabled
+
+        +hr()
+        +text-block()
+            p Параграф
+
+        +hr()
+        //- Инпут: +input(id, type, placeholder, name, value)
+        +input('id-test', 'password', 'write inside me', 'name-test', 'value-test').-active(data-input="input-test")
+        +input('id-test2', 'text', '', 'name-test', 'value-test').--test
+
+        +hr()
+        //- Хлебные крошки
+        +breadcrumbs('Главная', 'неГлавная', 'другая')
+
+        +hr()
+        //- Чекбокс: +checkbox(name, id, title)
+        +checkbox( 'box-test', 'box-test-1', 'Значение 1', 'js-class' )
+        +checkbox( 'box-test', 'box-test-2', 'Значение 2', '' ).--class
+
+        +hr()
+        //- Радио: +radio(textLabel, name, id, checked, js)
+        +radio( 'textLabel-1', 'radio-test', 'id-test-3', false, '' )
+        +radio( 'textLabel-2', 'radio-test', 'id-test-4', true, '' )
+
+        div(style='height: 200px;')

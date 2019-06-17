@@ -1,0 +1,23 @@
+/*  desktop first */
+
+.page-wrapper {
+    position: relative;
+    z-index: 5;
+    display: flex;
+    min-width: 320px;
+    flex-direction: column;
+    justify-content: space-between;
+    -webkit-overflow-scrolling: touch;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+
+    &.no-scroll {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+}

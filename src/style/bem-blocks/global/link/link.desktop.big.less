@@ -1,0 +1,18 @@
+/*  desktop first */
+
+.link {
+    display: inline;
+    text-decoration: none;
+    transition: color @fast-animation;
+
+    // Общие
+    &--block {
+        display: block;
+    }
+
+    &.active {
+        color: @cl-theme-link-hover;
+        font-weight: bold;
+    }
+    // !Общие
+}

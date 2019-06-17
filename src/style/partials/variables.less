@@ -1,0 +1,116 @@
+// Fonts
+@font-base: sans-serif;
+
+// Animation
+@fast-animation: 0.15s;
+@animation-time: 0.2s;
+@double-animation: 0.4s;
+
+// шрифты
+.roboto-300() { font-family: sans-serif; font-weight: 300; }
+.roboto-400() { font-family: sans-serif; font-weight: 400; }
+.roboto-500() { font-family: sans-serif; font-weight: 500; }
+.roboto-700() { font-family: sans-serif; font-weight: 700; }
+
+//стили
+.popup-content-default-style() {
+    background-color: @background;
+    padding: 16px 32px;
+    border-radius: 4px;
+    margin-bottom: 100px;
+    max-width: 640px;
+}
+
+// MediaQ - теперо подключаются в layout
+@desktop: ~"(max-width: 1439px)";
+@desktop-min: ~"(max-width: 1365px)";
+@tablet: ~"(max-width: 1023px)";
+@mobile: ~"(max-width: 767px)";
+
+// Colors
+// Цвета theme. Не трогать!!!
+@cl-theme-global: @cl-font-main;
+@cl-theme-link: @cl-font-main;
+@cl-theme-link-hover: @cl-green;
+@cl-theme-grey: @cl-gray;
+
+// Цвета текста
+@cl-font-main: @cl-darkness;
+@cl-font-light: @cl-gray;
+
+/* Добавлять по категориям cl-элемент
+/* @cl-button-bg: @Var */
+
+// Общий док
+@background: @cl-very-light;
+@background-main: #fff;
+
+// разделитель между секция
+@hr-main: @cl-gray-some-light-lighter;
+
+// бордеры элементов
+@cl-border: #ccc;
+
+// Основной акцентный цвет
+@cl-main: @cl-green;
+
+// Статусы
+@errorColor: #e60808;
+@okColor: #11ad45;
+@warningColor: #ffa000;
+
+// элементы формы (input, textarea, select, etc)
+@form-back: #fff;
+@form-border: @cl-gray-some-light;
+
+// Checkbox
+@check-mark: #fff;
+
+// Radiobutton
+@radio-back: #fff;
+
+//// Кнопки
+// orange
+@btn-orange-back: @cl-green;
+@btn-orange-text: #fff;
+@btn-orange-back-hover: darken(@btn-orange-back, 10%);
+@btn-orange-text-hover: #fff;
+
+
+// disable button
+@btn-disable-back: @cl-gray-light;
+@btn-disable-text: @cl-gray-dark;
+
+// Ссылки
+@link-blue: @cl-blue;
+@link-disable: @cl-gray-dark;
+@linl-light: @cl-gray-dark;
+
+// Тени
+@shadow-main: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
+
+
+/** ЦВЕТА */
+// серый
+@cl-very-light: #f6f6f6;
+@cl-gray-f2: #f2f2f2;
+@cl-gray-light: #E6E6E6;
+@cl-gray-some-light-lighter: #dbdbdb;
+@cl-gray-some-light: #cccccc;
+@cl-gray-dark: #999999;
+@cl-gray-6: #666;
+@cl-gray: #3b3b3b;
+@cl-darkness: #111;
+
+// оранжевый
+@cl-orange: #FF8C00;
+// синий
+@cl-blue: #0055bb;
+// красный
+// зелёный
+// @cl-green: #C2DA4E;
+@cl-green: #29b352;
+// // Alpha colors
+// // @cl-alpha: rgba(255, 255, 255, .2); // цвет + описание
+
+// Генерируемые цвета - ниже не пишем ничего сами )

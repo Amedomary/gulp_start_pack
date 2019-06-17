@@ -1,0 +1,16 @@
+//- ====================
+//- dl
+//- ====================
+
+mixin dl()
+    +b('dl').dl
+        block
+
+mixin dl-item(dt, dd, data)
+    +e.row
+        +e('dt').dt(class=data.dtClass) #{dt}
+        +e('dd').dd(class=data.ddClass) #{dd}
+
+mixin dl-table()
+    +b('table').dl.--table
+        block

@@ -1,0 +1,11 @@
+//- ====================
+//- checkbox
+//- ====================
+
+mixin checkbox(name, id, title, js)
+    +b('label').checkbox( class!=attributes.class )
+        +e('input').input&attributes( attributes )( type="checkbox", name=name, id=id, value=title, class=(js ? js : '') )
+        +e('span').name( for=id, class!=attributes.class )
+            if title
+                +e('span').text #{title}
+            block
