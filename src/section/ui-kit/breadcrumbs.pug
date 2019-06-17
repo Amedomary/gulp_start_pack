@@ -2,6 +2,8 @@
 //- хлебные крошки
 //- ====================
 
+//- +breadcrumbs('Главная', 'неГлавная', 'другая')
+
 mixin breadcrumbs(...items)
     +b('nav').breadcrumbs(class!=attributes.class)
         +e('ul').list

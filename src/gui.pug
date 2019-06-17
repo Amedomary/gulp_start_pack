@@ -26,6 +26,7 @@ include section/ui-kit/checkbox.pug
 include section/ui-kit/radio.pug
 include section/ui-kit/hr.pug
 include section/ui-kit/title.pug
+include section/ui-kit/dl.pug
 
 //- Выводим попапы
 block popup
@@ -43,6 +44,7 @@ block popup
 //- Выводим content
 block content
     .container
+        p Заголовки:
         h1 Gui - заголовок 1
         h2 Заголовок 2
         h3 Заголовок 3
@@ -52,6 +54,7 @@ block content
 
         +hr()
 
+        p Тайтлы:
         +title('h1').title.--block Gui - заголовок 1
         +title('h2').title.--block Заголовок 2
         +title('h3').title.--block Заголовок 3
@@ -62,6 +65,32 @@ block content
 
         +hr()
 
+        p Хлебные крошки:
+        +breadcrumbs('Главная', 'неГлавная', 'другая')
+
+        +hr()
+
+        p Чекбоксы:
+        //- Чекбокс: +checkbox(name, id, title)
+        +checkbox( 'box-test', 'box-test-1', 'Значение 1', 'js-class' )
+        +checkbox( 'box-test', 'box-test-2', 'Значение 2', '' ).--class
+
+        +hr()
+
+        p Термин - описание:
+        +dl()
+            +dl-item('dt', 'dd', 'data')
+            +dl-item('dt', 'dd', 'data')
+
+        +hr()
+
+        p Иконки:
+        //- Иконка
+        +icon('sort')
+
+        +hr()
+
+        p ПопАпы:
         +text-block()
             p
                 a.link.js-open-popup( href='#', data-popup='test' ) Открыть попАп - 1
@@ -69,40 +98,38 @@ block content
                 a.link.js-open-popup( href='#', data-popup='test2' ) Открыть попАп - 2
 
         +hr()
-        //- Текстовые ссылки
+
+        p Текстовые ссылки:
         +link('text', true).--test(data-url="atribute")
         +link('text',  false).js-class.-active(data-popup="open-test")
 
         +hr()
-        //- Кнопки похожие на кнопки
-        // +button('text', true).--test(data-url="atribute")
-        // +button('text', false).js-class.-active(data-popup="open-test")
 
+        p Кнопки похожие на кнопки:
         +button('Test btn 1', true)
         +button('Test btn 2', false).--block
         +button('Test btn 3', true).--block.-disabled
 
         +hr()
+
+        p Текстовый блок:
         +text-block()
             p Параграф
+            p Параграф 2
 
         +hr()
+
+        p Инпуты:
         //- Инпут: +input(id, type, placeholder, name, value)
         +input('id-test', 'password', 'write inside me', 'name-test', 'value-test').-active(data-input="input-test")
         +input('id-test2', 'text', '', 'name-test', 'value-test').--test
 
         +hr()
-        //- Хлебные крошки
-        +breadcrumbs('Главная', 'неГлавная', 'другая')
 
-        +hr()
-        //- Чекбокс: +checkbox(name, id, title)
-        +checkbox( 'box-test', 'box-test-1', 'Значение 1', 'js-class' )
-        +checkbox( 'box-test', 'box-test-2', 'Значение 2', '' ).--class
-
-        +hr()
+        p Радио:
         //- Радио: +radio(textLabel, name, id, checked, js)
         +radio( 'textLabel-1', 'radio-test', 'id-test-3', false, '' )
         +radio( 'textLabel-2', 'radio-test', 'id-test-4', true, '' )
 
+        //- Блок для красивого отображения гайда
         div(style='height: 200px;')

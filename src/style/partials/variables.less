@@ -7,12 +7,12 @@
 @double-animation: 0.4s;
 
 // шрифты
-.roboto-300() { font-family: sans-serif; font-weight: 300; }
-.roboto-400() { font-family: sans-serif; font-weight: 400; }
-.roboto-500() { font-family: sans-serif; font-weight: 500; }
-.roboto-700() { font-family: sans-serif; font-weight: 700; }
+// .roboto-300() { font-family: sans-serif; font-weight: 300; }
+// .roboto-400() { font-family: sans-serif; font-weight: 400; }
+// .roboto-500() { font-family: sans-serif; font-weight: 500; }
+// .roboto-700() { font-family: sans-serif; font-weight: 700; }
 
-//стили
+// стили
 .popup-content-default-style() {
     background-color: @background;
     padding: 16px 32px;
@@ -42,11 +42,11 @@
 /* @cl-button-bg: @Var */
 
 // Общий док
-@background: @cl-very-light;
+@background: #f6f6f6;
 @background-main: #fff;
 
 // разделитель между секция
-@hr-main: @cl-gray-some-light-lighter;
+@hr-main: #ccc;
 
 // бордеры элементов
 @cl-border: #ccc;
@@ -61,7 +61,7 @@
 
 // элементы формы (input, textarea, select, etc)
 @form-back: #fff;
-@form-border: @cl-gray-some-light;
+@form-border: #ccc;
 
 // Checkbox
 @check-mark: #fff;
@@ -76,10 +76,9 @@
 @btn-orange-back-hover: darken(@btn-orange-back, 10%);
 @btn-orange-text-hover: #fff;
 
-
 // disable button
-@btn-disable-back: @cl-gray-light;
-@btn-disable-text: @cl-gray-dark;
+@btn-disable-back: #E6E6E6;
+@btn-disable-text: #ccc;
 
 // Ссылки
 @link-blue: @cl-blue;
@@ -92,13 +91,7 @@
 
 /** ЦВЕТА */
 // серый
-@cl-very-light: #f6f6f6;
-@cl-gray-f2: #f2f2f2;
-@cl-gray-light: #E6E6E6;
-@cl-gray-some-light-lighter: #dbdbdb;
-@cl-gray-some-light: #cccccc;
 @cl-gray-dark: #999999;
-@cl-gray-6: #666;
 @cl-gray: #3b3b3b;
 @cl-darkness: #111;
 
@@ -108,7 +101,6 @@
 @cl-blue: #0055bb;
 // красный
 // зелёный
-// @cl-green: #C2DA4E;
 @cl-green: #29b352;
 // // Alpha colors
 // // @cl-alpha: rgba(255, 255, 255, .2); // цвет + описание
