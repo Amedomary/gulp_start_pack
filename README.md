@@ -7,6 +7,7 @@
 - js (jQ)
 
 Предустановлены стили Desktop-first.  
+Подключен шрифт Roboto.  
 Готовые компоненты и стили оставлены для примера как наиболее используемые.  
 
 # Быстрый старт
@@ -17,11 +18,12 @@
 # Старт проекта #
 ## Должно быть установлено ##
 node.js - https://nodejs.org/ Последняя стабильная версия
+python - https://www.python.org/ .exe
 
-### npm
+### gulp
 ```bash
-$ npm i npm -g 
-$ npm i gulp -g 
+$ npm install gulp-cli -g
+$ npm install gulp -D
 ```
 
 ## Настройка окружения ###
