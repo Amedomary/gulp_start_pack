@@ -1,5 +1,5 @@
 // Fonts
-@font-base: sans-serif;
+@font-base: 'Roboto', sans-serif;
 
 // Animation
 @fast-animation: 0.15s;
@@ -7,10 +7,10 @@
 @double-animation: 0.4s;
 
 // шрифты
-.roboto-300() { font-family: 'Roboto' sans-serif; font-weight: 300; }
-.roboto-400() { font-family: 'Roboto' sans-serif; font-weight: 400; }
-.roboto-500() { font-family: 'Roboto' sans-serif; font-weight: 500; }
-.roboto-700() { font-family: 'Roboto' sans-serif; font-weight: 700; }
+.roboto-300() { font-family: 'Roboto', sans-serif; font-weight: 300; }
+.roboto-400() { font-family: 'Roboto', sans-serif; font-weight: 400; }
+.roboto-500() { font-family: 'Roboto', sans-serif; font-weight: 500; }
+.roboto-700() { font-family: 'Roboto', sans-serif; font-weight: 700; }
 
 // стили
 .popup-content-default-style() {
@@ -29,14 +29,12 @@
 
 // Colors
 // Цвета theme. Не трогать!!!
-@cl-theme-global: @cl-font-main;
 @cl-theme-link: @cl-font-main;
 @cl-theme-link-hover: @cl-green;
-@cl-theme-grey: @cl-gray;
 
 // Цвета текста
-@cl-font-main: @cl-darkness;
-@cl-font-light: @cl-gray;
+@cl-font-main: @cl-gray-100;
+@cl-font-light: @cl-gray-300;
 
 /* Добавлять по категориям cl-элемент
 /* @cl-button-bg: @Var */
@@ -70,38 +68,37 @@
 @radio-back: #fff;
 
 //// Кнопки
-// orange
-@btn-orange-back: @cl-green;
-@btn-orange-text: #fff;
-@btn-orange-back-hover: darken(@btn-orange-back, 10%);
-@btn-orange-text-hover: #fff;
-
+// main
+@btn-main-back: @cl-green;
 // disable button
 @btn-disable-back: #E6E6E6;
 @btn-disable-text: #ccc;
 
 // Ссылки
-@link-blue: @cl-blue;
-@link-disable: @cl-gray-dark;
-@linl-light: @cl-gray-dark;
+@link-disable: @cl-gray-500;
+@link-light: @cl-gray-500;
 
 // Тени
 @shadow-main: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 
 
-/** ЦВЕТА */
+/** =========== ЦВЕТА =============== ЦВЕТА ================== ЦВЕТА ============ */
 // серый
-@cl-gray-dark: #999999;
-@cl-gray: #3b3b3b;
-@cl-darkness: #111;
+@cl-gray-100: #111;
+@cl-gray-300: #3b3b3b;
+@cl-gray-500: #999999;
 
 // оранжевый
-@cl-orange: #FF8C00;
+@cl-orange: #e9940a;
 // синий
 @cl-blue: #0055bb;
 // красный
+@cl-red: #e60909;
 // зелёный
-@cl-green: #29b352;
+@cl-green: #38B86F;
+// фиолетовый
+@cl-purpure: #7142d6;
+
 // // Alpha colors
 // // @cl-alpha: rgba(255, 255, 255, .2); // цвет + описание
 

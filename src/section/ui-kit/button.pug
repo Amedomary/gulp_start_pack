@@ -5,11 +5,11 @@
 //- if <a>       "link": false
 //- if <button>  "link": true
 
-mixin button(content,  link)
+mixin button(content, title, link)
     if link == false
-        +b('a').button( href="javascript:void(0);" title=`${content}` )&attributes( attributes ) #{content}
+        +b('a').button( href="javascript:void(0);" title=`${title}` )&attributes( attributes ) #{content}
             block
 
     else
-        +b('button').button&attributes( attributes ) #{content}
+        +b('button').button(title=`${title}`)&attributes( attributes ) #{content}
             block

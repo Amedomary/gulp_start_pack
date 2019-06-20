@@ -100,15 +100,15 @@ block content
         +hr()
 
         p Текстовые ссылки:
-        +link('text', true).--test(data-url="atribute")
-        +link('text',  false).js-class.-active(data-popup="open-test")
+        +link('text', '', true).--test(data-url="atribute")
+        +link('text', '',  false).js-class.-active(data-popup="open-test")
 
         +hr()
 
         p Кнопки похожие на кнопки:
-        +button('Test btn 1', true)
-        +button('Test btn 2', false).--block
-        +button('Test btn 3', true).--block.-disabled
+        +button('Test btn 1', '', true)
+        +button('Test btn 2', '', false).--block
+        +button('Test btn 3', '', true).--block.-disabled
 
         +hr()
 
