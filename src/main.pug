@@ -17,6 +17,8 @@ block popup
 
 //- Выводим content
 block content
+    include section/ui-kit/title.pug
+    +title('h1', 'Hey').--block.--center
+
     .container
-        include section/ui-kit/title.pug
-        +title('h1', 'Hey').--block.--center
+        +title('h1', 'Hey bro').--block.--center

@@ -12,7 +12,7 @@
 .roboto-500() { font-family: 'Roboto', sans-serif; font-weight: 500; }
 .roboto-700() { font-family: 'Roboto', sans-serif; font-weight: 700; }
 
-// стили
+/** ----- Mixins class ----- */
 .popup-content-default-style() {
     background-color: @background;
     padding: 16px 32px;
@@ -21,6 +21,7 @@
     max-width: 640px;
 }
 
+
 // MediaQ - теперо подключаются в layout
 @desktop: ~"(max-width: 1439px)";
 @desktop-min: ~"(max-width: 1365px)";
@@ -28,16 +29,16 @@
 @mobile: ~"(max-width: 767px)";
 
 // Colors
-// Цвета theme. Не трогать!!!
+// * Добавлять по категориям cl-элемент
+// * @cl-button-bg: @Var
+
+// Цвета theme
 @cl-theme-link: @cl-font-main;
 @cl-theme-link-hover: @cl-green;
 
 // Цвета текста
 @cl-font-main: @cl-gray-100;
 @cl-font-light: @cl-gray-300;
-
-/* Добавлять по категориям cl-элемент
-/* @cl-button-bg: @Var */
 
 // Общий док
 @background: #f6f6f6;
@@ -82,7 +83,7 @@
 @shadow-main: 0 1px 2px 0 rgba(0, 0, 0, 0.12);
 
 
-/** =========== ЦВЕТА =============== ЦВЕТА ================== ЦВЕТА ============ */
+/** ----- ЦВЕТА ----- */
 // серый
 @cl-gray-100: #111;
 @cl-gray-300: #3b3b3b;
