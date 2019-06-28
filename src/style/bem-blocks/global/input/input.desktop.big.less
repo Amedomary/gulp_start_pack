@@ -37,7 +37,7 @@
     &__input-field {
         display: inline-block;
         height: 38px;
-        min-width: 220px;
+        min-width: 60px;
         width: auto;
         padding: 6px;
         background-color: @form-back;
@@ -58,24 +58,6 @@
 
         &[placeholder]{
             text-overflow: ellipsis;
-        }
-    }
-
-    &__search-button {
-        position: absolute;
-        bottom: 5px;
-        right: 0;
-        top: 2px;
-        border: none;
-        padding: 2px 5px 5px;
-        font-size: 11px;
-        width: 24px;
-        background-color: transparent;
-        transition: color @fast-animation;
-
-        .no-touchevents &:hover,
-        .touchevents &:active {
-            color: @cl-theme-link-hover;
         }
     }
 

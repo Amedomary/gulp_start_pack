@@ -63,6 +63,7 @@ $ gulp color-create --color --ffffff
 ```
 
 **Создаем шрифт из иконок**  
+Размер svg для шрфита должен быть выполнен заливкой.
 в папку добавляем svg файлы.  
 /src/images/svg_for_icon/
 
