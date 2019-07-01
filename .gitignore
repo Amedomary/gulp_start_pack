@@ -127,7 +127,6 @@ concat-less/
 /src/style/partials/fonts.less
 
 
-/src/iconlist.pug
+/src/_iconlist.pug
 build/
 src/style/concat-less/*
-src/iconlist.pug

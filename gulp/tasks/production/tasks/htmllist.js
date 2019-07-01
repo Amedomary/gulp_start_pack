@@ -6,8 +6,6 @@ const config  = require('../../../config');
 const Promise = require('bluebird');
 const fs      = require("fs");
 
-var PLUGIN_NAME = 'kontora-htmllist';
-
 /*
  * Build index.html
  */
