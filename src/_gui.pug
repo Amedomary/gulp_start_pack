@@ -101,6 +101,8 @@ block content
 
         p Текстовые ссылки:
         +link('text', '', true).--test(data-url="atribute")
+        +link('text', '',  false).js-class(data-popup="open-test")
+        +link('text', '', true).-active(data-url="atribute")
         +link('text', '',  false).js-class.-active(data-popup="open-test")
 
         +hr()

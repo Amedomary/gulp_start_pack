@@ -20,7 +20,6 @@ module.exports = {
         icons: 'src/images/svg_for_icon/*.*',
         fonts: 'src/fonts/**/*.*',
         angular: 'src/angular/*.ts',
-        bower: 'src/js/node_modules/**/*.*',
         otherfiles: ['src/*.*', '!src/*.jade'],
         srcExternal: 'src/js/**/external.js',
         srcInternal: ['src/js/**/*.js', '!src/js/external.js'],
