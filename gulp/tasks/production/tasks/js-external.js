@@ -20,10 +20,6 @@ module.exports = function(options) {
         gulp.src(config.js.srcHtml5shiv)
             .pipe(gulp.dest(config.js.destHtml5shiv));
 
-        // html5shiv делаем отдельно чтобы подключить его в head
-        gulp.src(config.js.srcNormalize)
-            .pipe(gulp.dest(config.js.destNormalize));
-
         return gulp.src(config.js.srcExternal)
             .pipe(fileinclude({
                 prefix: '@@',

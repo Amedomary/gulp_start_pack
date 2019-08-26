@@ -1,10 +1,8 @@
 {
-  "name": "my-awesome-package",
-  "version": "1.0.0",
+  "name": "gulp-start-pack",
+  "version": "2.1.18",
   "license": "MIT",
   "dependencies": {
-    "html5shiv": "^3.7.3",
-    "jquery": "^3.3.1",
-    "normalize-css": "^2.3.1"
+    "html5shiv": "^3.7.3"
   }
 }

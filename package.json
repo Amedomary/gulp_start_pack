@@ -101,5 +101,6 @@
     "typescript": "^1.7.3",
     "vinyl": "^1.1.1",
     "zone.js": "0.5.10"
-  }
+  },
+  "dependencies": {}
 }

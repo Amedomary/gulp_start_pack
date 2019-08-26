@@ -17,10 +17,6 @@ module.exports = function(options) {
         gulp.src(config.js.srcHtml5shiv)
             .pipe(gulp.dest(config.js.destHtml5shiv));
 
-        // Normalize for head
-        // gulp.src(config.js.srcNormalize)
-        //     .pipe(gulp.dest(config.js.destNormalize));
-
         gulp.src(config.js.src)
             .pipe($.if(!config.js.requireJs, $.concat('internal.js'))) // if not RequireJS - do not concat
             .pipe($.if(!config.js.requireJs, $.fileInclude({
