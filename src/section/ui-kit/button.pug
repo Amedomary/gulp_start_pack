@@ -11,5 +11,5 @@ mixin button(content, title, link)
             block
 
     else
-        +b('button').button(title=`${title}`)&attributes( attributes ) #{content}
+        +b('button').button(type="button" title=`${title}`)&attributes( attributes ) #{content}
             block
