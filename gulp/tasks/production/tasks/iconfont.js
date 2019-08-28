@@ -21,7 +21,7 @@ module.exports = function(options) {
             }))
             .pipe($.iconfont({
                 fontName:      fontName,
-                appendUnicode: true,
+                prependUnicode: true,
                 formats:       ['ttf', 'eot', 'woff', 'svg', 'woff2'],
                 timestamp:     runTimestamp,
                 normalize:     true,
