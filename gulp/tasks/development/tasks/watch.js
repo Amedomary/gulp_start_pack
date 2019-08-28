@@ -34,8 +34,6 @@ module.exports = function(options) {
 
         $.watch(configDev.watch.json, gulp.series('json'));
 
-        // $.watch(configDev.watch.bower, gulp.series('bower-requirejs', 'dev:js'));
-
         $.watch(configDev.watch.srcExternal, gulp.series('js-external', 'webserver-reload'));
         $.watch(configDev.watch.srcInternal, gulp.series('js-internal', 'webserver-reload'));
 

@@ -22,13 +22,8 @@ lazyRequireTask('favicon-generate', './tasks/favicon-generate');
 lazyRequireTask('favicon-inject-markups', './tasks/favicon-inject-markups');
 gulp.task('favicon', gulp.parallel('favicon-check-for-updates', 'favicon-generate', 'favicon-inject-markups'));
 
-
 // images from production
 lazyRequireTask('images', './tasks/images');
-
-// pug to html
-// lazyRequireTask('pug', './tasks/pug');
-// lazyRequireTask('emitty', './tasks/emitty');
 
 const gulpif   = require('gulp-if');
 const pug      = require('gulp-pug');
@@ -48,14 +43,8 @@ gulp.task('emitty', () =>
 // less foe ie only
 lazyRequireTask('ieless', './tasks/ieless');
 
-// copy bower folder to build if requireJS is true
-lazyRequireTask('bower-requirejs', './tasks/bower-requirejs');
 // generate js if requireJS is true
 lazyRequireTask('js', './tasks/js');
-// combine tasks to only for requireJS
-gulp.task('js-require', gulp.parallel('bower-requirejs', 'js'));
-
-// external js from bower to only file if requireJS is false
 lazyRequireTask('js-external', './tasks/js-external');
 // inner js to only file if requireJS is false
 lazyRequireTask('js-internal', './tasks/js-internal');
@@ -136,27 +125,20 @@ gulp.task('compile',
         gulp.parallel(
             (config.main.iconfont ? 'iconfont' : 'sprites'),
             'images',
-            // 'pug',
             'emitty',
             (config.main.requireJs ? 'js-require' : 'js-norequire'),
-            // 'ieless',
             'json',
             'otherfiles'
         ),
-        // 'font',
         'fonts-all',
         'less'
     )
 );
 
-//TODO: add testSystem task
-// gulp.task('init', gulp.series('htmllist'));
 gulp.task('init', gulp.series(
     'htmllist',
     'iconlist'
 ));
-
-
 
 gulp.task('build',
     gulp.series(
@@ -177,9 +159,3 @@ gulp.task('buildback',
         'buster'
     )
 );
-
-//Require CSS
-// lazyRequireTask('require-less-concat', './tasks/require-less-concat');
-// lazyRequireTask('require-less-compile', './tasks/require-less-compile');
-
-// gulp.task('require-css', gulp.series('require-less-concat', 'require-less-compile'));

@@ -65,14 +65,9 @@ gulp.task('emitty-scan', () =>
 // less foe ie only from production
 lazyRequireTask('ieless', '../production/tasks/ieless');
 
-// copy bower folder to build in requireJS is true // prod
-lazyRequireTask('bower-requirejs', '../production/tasks/bower-requirejs');
 // generate js if requireJS is true // DEV
 lazyRequireTask('dev:js', './tasks/js');
-// combine tasks to only for requireJS // DEV
-gulp.task('dev:js-require', gulp.parallel('bower-requirejs', 'dev:js'));
 
-// external js from bower to only file if requireJS is false // prod
 lazyRequireTask('js-external', '../production/tasks/js-external');
 // inner js to only file if requireJS is false // prod
 lazyRequireTask('js-internal', '../production/tasks/js-internal');

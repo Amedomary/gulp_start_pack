@@ -106,7 +106,6 @@ module.exports = {
             'ie 9'
         ]
     },
-    bower: 'src/js/node_modules/**/*.*',
     wrapPipe: function(taskFn) {
         return function(done) {
             var onSuccess = function() {
