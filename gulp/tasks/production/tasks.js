@@ -105,6 +105,7 @@ lazyRequireTask('buster', './tasks/buster');
 // Compile LESS to CSS
 gulp.task('less', gulp.series(
     gulp.parallel(
+        'concat-mobile',
         'concat-tablet',
         'concat-desktop-min',
         'concat-desktop',
@@ -178,7 +179,7 @@ gulp.task('buildback',
 );
 
 //Require CSS
-lazyRequireTask('require-less-concat', './tasks/require-less-concat');
-lazyRequireTask('require-less-compile', './tasks/require-less-compile');
+// lazyRequireTask('require-less-concat', './tasks/require-less-concat');
+// lazyRequireTask('require-less-compile', './tasks/require-less-compile');
 
-gulp.task('require-css', gulp.series('require-less-concat', 'require-less-compile'));
+// gulp.task('require-css', gulp.series('require-less-concat', 'require-less-compile'));
