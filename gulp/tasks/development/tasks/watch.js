@@ -1,22 +1,22 @@
 'use strict';
 
-const $         = require('gulp-load-plugins')();
-const gulp      = require('gulp');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
 const configDev = require('../config');
-const config    = require('../../../config');
+const config = require('../../../config');
 
 /*
  * Смотрим за изменениями
  */
-module.exports = function(options) {
-    return function() {
+module.exports = function (options) {
+    return function () {
         // $.watch([configDev.watch.html], gulp.series('pug', 'webserver-reload'));
         global.watch = true;
         $.watch([configDev.watch.html], gulp.series('addInc2pug','emitty-scan', 'webserver-reload'))
-        .on('all', (event, filepath) => {
-            console.log(filepath);
-            global.emittyChangedFile = filepath;
-        });
+            .on('all', (event, filepath) => {
+                console.log(filepath);
+                global.emittyChangedFile = filepath;
+            });
 
         $.watch(config.less.bemblocks + '**/*.mobile.less', gulp.series('dev:concat-mobile', 'dev:less-compile'));
 
@@ -24,9 +24,9 @@ module.exports = function(options) {
 
         $.watch(config.less.bemblocks + '**/*.desktop.min.less', gulp.series('dev:concat-desktop-min', 'dev:less-compile'));
 
-        $.watch(config.less.bemblocks + '**/*.desktop.less', gulp.series('dev:concat-desktop', 'dev:less-compile'))
+        $.watch(config.less.bemblocks + '**/*.desktop.less', gulp.series('dev:concat-desktop', 'dev:less-compile'));
 
-        $.watch(config.less.bemblocks + '**/*.desktop.big.less', gulp.series('dev:concat-desktop-big', 'dev:less-compile'))
+        $.watch(config.less.bemblocks + '**/*.desktop.big.less', gulp.series('dev:concat-desktop-big', 'dev:less-compile'));
 
         // $.watch(config.less.bemblocks + '**/*.desktop.fullhd.less', gulp.series('dev:concat-desktop-fullhd', 'dev:less-compile'))
 

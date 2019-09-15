@@ -1,18 +1,18 @@
 'use strict';
 
-const $       = require('gulp-load-plugins')();
-const gulp    = require('gulp');
-const config  = require('../../../config');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
 const Promise = require('bluebird');
-const fs      = require("fs");
+const fs = require('fs');
 
 /*
  * Build index.html
  */
-module.exports = function(options) {
-    return config.wrapPipe(function(success, error) {
-        var build_path     = __dirname + "/../../../../src/images/svg_for_icon/";
-        var files_list     = [];
+module.exports = function (options) {
+    return config.wrapPipe(function (success, error) {
+        var build_path = __dirname + '/../../../../src/images/svg_for_icon/';
+        var files_list = [];
         var index_template = __dirname + '/../../../template/_iconlist.pug';
 
         var promises = fs.readdirSync(build_path).map(function (file) {
@@ -27,12 +27,12 @@ module.exports = function(options) {
             });
         });
 
-        Promise.all(promises).then(function() {
+        Promise.all(promises).then(function () {
             gulp.src(index_template)
                 .pipe($.consolidate('lodash', {
                     files: files_list,
                     names: [],
-                    path:  "/"
+                    path: '/'
                 }))
                 .pipe(gulp.dest('src/'));
         });

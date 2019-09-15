@@ -1,15 +1,13 @@
 {
     "env": {
-        "browser": true
+        "browser": true,
+        "es6": true
     },
     "globals":{
         "require":true,
         "define":true
     },
     "extends": "yandex",
-    "plugins": [
-        "requirejs"
-    ],
     "rules": {
         "indent": [
             "error",

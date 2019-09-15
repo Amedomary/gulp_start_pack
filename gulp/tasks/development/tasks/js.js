@@ -1,23 +1,23 @@
 'use strict';
 
-const $                    = require('gulp-load-plugins')();
-const gulp                 = require('gulp');
-const config               = require('../../../config');
-const browsersync          = require('browser-sync');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
+const browsersync = require('browser-sync');
 
 var reload = browsersync.reload;
 /*
  * Build js
  */
-module.exports = function(options) {
-    return function(callback) {
+module.exports = function (options) {
+    return function (callback) {
         // jquery for head
         gulp.src(config.js.srcJquery)
             .pipe(gulp.dest(config.js.destJquery));
 
         // html5shiv for head
-        gulp.src(config.js.srcHtml5shiv)
-            .pipe(gulp.dest(config.js.destHtml5shiv));
+        // gulp.src(config.js.srcHtml5shiv)
+        //     .pipe(gulp.dest(config.js.destHtml5shiv));
 
         gulp.src([config.js.src, '!' + config.base + 'js/node_modules/**/*.*'])
             // .pipe($.if(!config.js.requireJs, $.concat('internal.js'))) // if not RequireJS - do not concat
@@ -36,7 +36,7 @@ module.exports = function(options) {
             .pipe($.changed(config.js.dest, {extension: '.js'}))
             // .pipe($.debug({title: 'changed'}))
             .pipe(gulp.dest(config.js.dest))
-            .pipe($.if(global.isWatching, reload({stream:true})));
+            .pipe($.if(global.isWatching, reload({stream: true})));
         callback();
     };
 };

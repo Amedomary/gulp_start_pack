@@ -1,5 +1,5 @@
-var build = 'build/',
-    base = 'src/';
+var build = 'build/';
+var base = 'src/';
 
 module.exports = {
     build: build,
@@ -25,9 +25,9 @@ module.exports = {
         fontName: 'icons'
     },
     favicon: {
-        masterPicture: base + 'images/favicon/master-favicon.png', //картинка, из которой делаются иконки
+        masterPicture: base + 'images/favicon/master-favicon.png', // картинка, из которой делаются иконки
         iconsPath: '/images/favicon', // куда делаются иконки
-        json: base + 'json/faviconData.json', //путь до json
+        json: base + 'json/faviconData.json', // путь до json
         dest: build + 'images/favicon/', // куда попадют иконки
         srcInject: build + '*.html', // html для редактирования
         destInject: build // куда возвращается html
@@ -40,8 +40,6 @@ module.exports = {
     js: {
         srcJquery: 'src/js/node_modules/jquery/dist/*.*',
         destJquery: build + 'js/jquery/',
-        srcHtml5shiv: 'src/js/node_modules/html5shiv/dist/*.*',
-        destHtml5shiv: build + 'js/html5shiv/',
         srcNormalize: 'src/js/node_modules/normalize-css/normalize.css',
         destNormalize: build + 'css/normalize/',
         src: base + 'js/**/*.js',
@@ -90,7 +88,7 @@ module.exports = {
         variables: base + 'style/partials/variables.less'
     },
     assets: {
-        dest : build + 'assets/'
+        dest: build + 'assets/'
     },
     clean: {
         src: './' + build
@@ -106,18 +104,18 @@ module.exports = {
             'ie 9'
         ]
     },
-    wrapPipe: function(taskFn) {
-        return function(done) {
-            var onSuccess = function() {
+    wrapPipe: function (taskFn) {
+        return function (done) {
+            var onSuccess = function () {
                 done();
             };
-            var onError = function(err) {
+            var onError = function (err) {
                 done(err);
-            }
+            };
             var outStream = taskFn(onSuccess, onError);
-            if(outStream && typeof outStream.on === 'function') {
+            if (outStream && typeof outStream.on === 'function') {
                 outStream.on('end', onSuccess);
             }
-        }
+        };
     }
 };

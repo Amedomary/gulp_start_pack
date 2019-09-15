@@ -1,22 +1,22 @@
 'use strict';
 
-const $           = require('gulp-load-plugins')();
-const gulp        = require('gulp');
-const config      = require('../../../config');
-const through2    = require('through2').obj;
-const File        = require('vinyl');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
+const through2 = require('through2').obj;
+const File = require('vinyl');
 
 // concate styles for version
-module.exports = function(options) {
-    return function() {
+module.exports = function (options) {
+    return function () {
         const lessImports = [];
         return gulp.src(config.less.bemblocks + options.lessName)
             .pipe(through2(
-            	function(file, enc, callback) {
+            	function (file, enc, callback) {
 	            	lessImports.push('@import ' + '"../bem-blocks/global/' + file.relative + '";');
 	            	callback();
 	            },
-	            function(callback) {
+	            function (callback) {
 	            	let lessFile = new File({
 	            		contents: new Buffer(lessImports.join('\n'), 'utf-8'),
 	            		base: '',
@@ -27,5 +27,5 @@ module.exports = function(options) {
 	            }
 	        ))
             .pipe(gulp.dest(config.less.concatless));
-    }
+    };
 };

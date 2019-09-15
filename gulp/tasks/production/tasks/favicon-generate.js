@@ -1,14 +1,14 @@
 'use strict';
 
-const $             = require('gulp-load-plugins')();
-const gulp          = require('gulp');
-const config        = require('../../../config');
-const realFavicon   = require('gulp-real-favicon');
-const fs            = require("fs");
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
+const realFavicon = require('gulp-real-favicon');
+const fs = require('fs');
 
 
-module.exports = function(options) {
-    return config.wrapPipe(function(success, error) {
+module.exports = function (options) {
+    return config.wrapPipe(function (success, error) {
         // Generate the icons. This task takes a few seconds to complete.
         // You should run it at least once to create the icons. Then,
         // you should run it whenever RealFaviconGenerator updates its
@@ -67,7 +67,7 @@ module.exports = function(options) {
                 errorOnImageTooSmall: false
             },
             markupFile: config.favicon.json
-        }, function() {
+        }, function () {
             success();
         });
     });

@@ -1,14 +1,14 @@
 'use strict';
 
-const $             = require('gulp-load-plugins')();
-const gulp          = require('gulp');
-const config        = require('../../../config');
-const realFavicon   = require('gulp-real-favicon');
-const fs            = require("fs");
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
+const realFavicon = require('gulp-real-favicon');
+const fs = require('fs');
 
 
-module.exports = function(options) {
-    return config.wrapPipe(function(success, error) {
+module.exports = function (options) {
+    return config.wrapPipe(function (success, error) {
 
         // Inject the favicon markups in your HTML pages. You should run
         // this task whenever you modify a page. You can keep this task

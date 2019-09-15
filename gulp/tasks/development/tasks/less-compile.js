@@ -1,18 +1,18 @@
 'use strict';
 
-const $                    = require('gulp-load-plugins')();
-const gulp                 = require('gulp');
-const config               = require('../../../config');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
 const lessPluginAutoPrefix = require('less-plugin-autoprefix');
-const lessPluginCleanCSS   = require('less-plugin-clean-css');
-const browsersync          = require('browser-sync');
+const lessPluginCleanCSS = require('less-plugin-clean-css');
+const browsersync = require('browser-sync');
 
-var autoprefixer = new lessPluginAutoPrefix(config.autoprefixer),
-    cleancss     = new lessPluginCleanCSS({ advanced: true }),
-    reload       = browsersync.reload;
+var autoprefixer = new lessPluginAutoPrefix(config.autoprefixer);
+var cleancss = new lessPluginCleanCSS({advanced: true});
+var reload = browsersync.reload;
 
-module.exports = function(options) {
-    return function(callback) {
+module.exports = function (options) {
+    return function (callback) {
         gulp.src(config.less.src)
             .pipe($.sourcemaps.init())
             .pipe($.less({
@@ -20,7 +20,7 @@ module.exports = function(options) {
                     cleancss,
                     autoprefixer
                 ]
-            })).on('error', $.notify.onError(function(err) {
+            })).on('error', $.notify.onError(function (err) {
                 return {
                     title: 'Styles',
                     message: err.message
@@ -30,7 +30,7 @@ module.exports = function(options) {
             .pipe($.csso())
             .pipe($.sourcemaps.write())
             .pipe(gulp.dest(config.less.dest))
-            .pipe($.if(global.isWatching, reload({stream:true})));
+            .pipe($.if(global.isWatching, reload({stream: true})));
         callback();
     };
 };

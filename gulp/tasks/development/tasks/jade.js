@@ -1,8 +1,8 @@
 'use strict';
 
-const $           = require('gulp-load-plugins')();
-const gulp        = require('gulp');
-const config      = require('../../../config');
+const $ = require('gulp-load-plugins')();
+const gulp = require('gulp');
+const config = require('../../../config');
 
 /*
  * Build jade
@@ -39,18 +39,18 @@ const config      = require('../../../config');
 //     };
 // };
 
-module.exports = function(options) {
-    return config.wrapPipe(function(success, error) {
+module.exports = function (options) {
+    return config.wrapPipe(function (success, error) {
         return gulp.src('src/*.jade')
-            .pipe($.jade())                                    // generate HTML
+            .pipe($.jade()) // generate HTML
             // .pipe($.cleanhtml())                               // delete comments
             .pipe($.if(config.jade.expand, $.htmlPrettify({
-                brace_style:       'expand',
-                indent_size:       1,
-                indent_char:       '    ',
+                brace_style: 'expand',
+                indent_size: 1,
+                indent_char: '    ',
                 indent_inner_html: true,
                 preserve_newlines: true
-            })))                                               // expand/collapse
+            }))) // expand/collapse
             .pipe(gulp.dest(config.jade.dest));
     });
 };
