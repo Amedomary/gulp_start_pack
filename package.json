@@ -18,9 +18,9 @@
     "node": ">= 0.10.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
-    "@babel/register": "^7.5.5",
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
     "angular2": "2.0.0-beta.0",
     "bemto.pug": "^2.1.0",
     "bluebird": "^3.5.5",
@@ -29,7 +29,7 @@
     "emitty": "^1.4.0",
     "es6-promise": "^4.2.8",
     "es6-shim": "^0.35.5",
-    "eslint": "^6.2.2",
+    "eslint": "^6.4.0",
     "eslint-config-yandex": "^1.0.6",
     "eslint-html-reporter": "^0.7.3",
     "eslint-plugin-import": "^2.18.2",
@@ -74,7 +74,7 @@
     "gulp-typescript": "^5.0.1",
     "gulp-uglify": "^3.0.2",
     "gulp-watch": "^5.0.1",
-    "gulp.spritesmith": "^6.10.1",
+    "gulp.spritesmith": "^6.11.0",
     "imagemin": "^7.0.0",
     "imagemin-pngquant": "^8.0.0",
     "is-svg": "^4.2.0",
@@ -96,7 +96,7 @@
     "stream-combiner2": "^1.1.1",
     "systemjs": "5.0.0",
     "through2": "^3.0.1",
-    "typescript": "^3.5.3",
+    "typescript": "^3.6.3",
     "vinyl": "^1.1.1",
     "zone.js": "0.10.2"
   }
